@@ -1,11 +1,13 @@
 <?php
 
-use App\Http\Controllers\GroupsController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\OrganizationsController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\TypesController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\TypesController;
+use App\Http\Controllers\GroupsController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OrganizationsController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,20 +33,25 @@ Route::get('/home', function () {
     ]);
 });
 
-Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
-Route::post('/login', [LoginController::class, 'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login-proses');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/register', [RegisterController::class, 'index']);
-Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register-proses');
 
-Route::get('/', [OrganizationsController::class, 'index']);
-Route::post('/organizations', [OrganizationsController::class, 'store']);
-Route::get('/organizations/create', [OrganizationsController::class, 'create']);
+Route::get('/', [OrganizationsController::class, 'index'])->name('organizations');
 
-Route::get('/groups', [GroupsController::class, 'index']);
-Route::get('/groups/{group:name}', [GroupsController::class, 'show']);
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::get('/types', [TypesController::class, 'index']);
+    Route::post('/organizations', [OrganizationsController::class, 'store'])->name('organizations-post');
+    Route::get('/organizations/create', [OrganizationsController::class, 'create'])->name('organizations-create');
+
+    Route::get('/groups', [GroupsController::class, 'index'])->name('groups');
+    Route::get('/groups/{group:name}', [GroupsController::class, 'show'])->name('groups-detail');
+
+    Route::get('/types', [TypesController::class, 'index'])->name('login');
+});
 
 // Route::get('/data'), [];

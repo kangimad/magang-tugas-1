@@ -12,7 +12,7 @@ class LoginController extends Controller
     {
         return view('login.index', [
             'title' => 'Login',
-            'subtitle' => 'Health Servicer',
+            'subtitle' => 'Health Services',
         ]);
     }
 
@@ -25,7 +25,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/');
+            return redirect()->intended('/dashboard');
         }
         return back()->with('loginError', 'Login failed!');
     }

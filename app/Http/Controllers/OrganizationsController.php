@@ -15,7 +15,7 @@ class OrganizationsController extends Controller
 {
     public function index(Request $request)
     {
-        
+
         // dd($request->all());
 
         $organizations = Organizations::query()
@@ -72,7 +72,7 @@ class OrganizationsController extends Controller
 
         Organizations::create($validatedData);
 
-        return redirect('/organizations')->with('success', 'Data created!');
+        return redirect()->route('organizations')->with('success', 'Data created!');
 
 
 

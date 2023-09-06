@@ -22,4 +22,21 @@
         </div>
     </div>
 
+    <script>
+        function dropdown() {
+            let dropdown1 = document.getElementById("dropdown1")
+            let dropdownMenu = document.getElementById("dropdown-menu")
+            console.log(dropdownMenu.classList);
+            if (dropdownMenu.classList.contains('hidden')) {
+                console.log("on");
+                dropdownMenu.classList.remove('hidden')
+            }else {
+                dropdownMenu.classList.add('hidden')
+            }
+
+
+        }
+    </script>
+</body>
+
 </html>

@@ -25,8 +25,7 @@
                             </label>
                             <input type="text" name="username" id="username" placeholder="username"
                                 value="{{ old('username') }}"
-                                class="px-3 py-2 rounded outline-none border  w-full @error('username') ring-1 ring-red-600 @enderror"
-                                >
+                                class="px-3 py-2 rounded outline-none border  w-full @error('username') ring-1 ring-red-600 @enderror">
                             @error('username')
                                 <div class="mt-2 text-xs text-red-600">{{ $message }}</div>
                             @enderror
@@ -36,7 +35,10 @@
                                 Password
                             </label>
                             <input type="password" name="password" id="password" placeholder="password"
-                                class="px-3 py-2 rounded outline-none border  w-full">
+                                class="px-3 py-2 rounded outline-none border  w-full @error('password') ring-1 ring-red-600 @enderror">
+                                @error('password')
+                                <div class="mt-2 text-xs text-red-600">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="flex justify-center items-center">
                             <button type="submit"
