@@ -1,0 +1,29 @@
+/* *, html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.my-css-content {
+    width: 100vmax;
+    height: 80vmax;
+    border: 2px solid red;
+}
+
+.my-css-header{
+    width: 100vmax;
+    height: 15vmax;
+    border: 2px solid greenyellow;
+
+}
+
+.my-css-footer{
+    width: 100vmax;
+    height: 5vmax;
+    border: 2px solid blueviolet;
+
+} */
+ .my-content
+{
+    max-height: 495px;
+    min-height: 495px;
+}
