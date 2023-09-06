@@ -43,16 +43,14 @@
                             <ul>
                                 <li class="px-3 py-1 text-xs text-left border-b hover:rounded-t hover:bg-teal-700"><a
                                         href="/dashboard">Dashboard</a></li>
-                                <li class="px-3 py-1 text-xs text-left hover:rounded-b hover:bg-teal-700"><a
-                                        href="/logout"><i class="bi bi-box-arrow-left">
-                                        </i>Logout</a>
-                                    {{-- <form action="/logout" method="post">
+                                <li class="px-3 py-1 text-xs text-left hover:rounded-b hover:bg-teal-700">
+                                    <form action="/logout" method="post">
                                             @csrf
                                             <button type="submit"
                                                 class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Logout' ? 'text-white underline' : '' }}">
                                                 <i class="bi bi-box-arrow-left">
                                                 </i>Logout</button>
-                                        </form> --}}
+                                        </form>
                                 </li>
                             </ul>
                         </div>
