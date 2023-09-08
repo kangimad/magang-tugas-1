@@ -26,12 +26,6 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 //         'subtitle' => 'Health Services'
 //     ]);
 // });
-Route::get('/home', function () {
-    return view('home.index', [
-        'title' => 'Home',
-        'subtitle' => 'Health Services'
-    ]);
-});
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login-proses');
@@ -42,17 +36,25 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register-p
 
 Route::get('/', [OrganizationsController::class, 'publicIndex'])->name('pub-organizations');
 
-Route::group(['prefix' => 'user','middleware' => ['auth']], function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('us-dashboard');
+Route::group(['middleware' => ['auth']], function () {
+    
+    Route::get('/user/home', function () {
+    return view('user.home.index', [
+            'title' => 'Home',
+            'subtitle' => 'Health Services'
+        ]);
+    });
 
-    Route::get('/organizations', [OrganizationsController::class, 'index'])->name('us-organizations');
-    Route::post('/organizations', [OrganizationsController::class, 'store'])->name('us-organizations-post');
-    Route::get('/organizations/create', [OrganizationsController::class, 'create'])->name('us-organizations-create');
+    Route::get('/user/dashboard', [DashboardController::class, 'index'])->name('us-dashboard');
 
-    Route::get('/groups', [GroupsController::class, 'index'])->name('us-groups');
-    Route::get('/groups/{group:name}', [GroupsController::class, 'show'])->name('us-groups-detail');
+    Route::get('/user/organizations', [OrganizationsController::class, 'index'])->name('us-organizations');
+    Route::post('/user/organizations', [OrganizationsController::class, 'store'])->name('us-organizations-post');
+    Route::get('/user/organizations/create', [OrganizationsController::class, 'create'])->name('us-organizations-create');
 
-    Route::get('/types', [TypesController::class, 'index'])->name('us-types');
+    Route::get('/user/groups', [GroupsController::class, 'index'])->name('us-groups');
+    Route::get('/user/groups/{group:name}', [GroupsController::class, 'show'])->name('us-groups-detail');
+
+    Route::get('/user/types', [TypesController::class, 'index'])->name('us-types');
 });
 
 // Route::get('/data'), [];

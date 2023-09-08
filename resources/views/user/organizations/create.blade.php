@@ -1,5 +1,5 @@
 {{-- @dd($groups) --}}
-@extends('layouts')
+@extends('partials.user-layout')
 @section('content')
     <div class=" pt-5 px-48 w-screen">
         {{-- ROW 1 --}}

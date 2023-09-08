@@ -1,5 +1,5 @@
 {{-- @dd($types); --}}
-@extends('layouts')
+@extends('partials.user-layout')
 @section('content')
     <div class="mx-3 py-5 font-serif">
         {{-- ROW 1 --}}

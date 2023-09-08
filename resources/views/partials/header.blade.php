@@ -11,16 +11,16 @@
         class="flex flex-row items-center px-48 py-2 justify-items-center w-full bg-teal-700 text-gray-300 text-sm font-semibold shadow-lg">
         <ul class="text-decoration-none flex gap-x-3">
                 @auth
-                <li><a href="/home"
+                <li><a href="/user/home"
                         class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Home' ? 'text-white underline' : '' }}">Home</a>
                 </li>
-                <li><a href="/"
+                <li><a href="/user/organizations"
                         class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Organizations' ? 'text-white underline' : '' }}">Organizations</a>
                 </li>
-                <li><a href="/groups"
+                <li><a href="/user/groups"
                         class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Groups' ? 'text-white underline' : '' }}">Groups</a>
                 </li>
-                <li><a href="/types"
+                <li><a href="/user/types"
                         class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Types' ? 'text-white underline' : '' }}">Types</a>
                 </li>
                 @endauth
@@ -42,7 +42,7 @@
                             class="absolute hidden group-focus:block top-full mt-1 rounded shadow-lg bg-teal-600">
                             <ul>
                                 <li class="px-3 py-1 text-xs text-left border-b hover:rounded-t hover:bg-teal-700"><a
-                                        href="/dashboard">Dashboard</a></li>
+                                        href="/user/dashboard">Dashboard</a></li>
                                 <li class="px-3 py-1 text-xs text-left hover:rounded-b hover:bg-teal-700">
                                     <form action="/logout" method="post">
                                             @csrf

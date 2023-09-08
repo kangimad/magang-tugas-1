@@ -6,7 +6,7 @@
                 <p class="font-bold">REGISTER</p>
             </div>
             <div class="flex flex-row w-full mt-5">
-                <form action="/public/register" method="post" class="w-full">
+                <form action="/register" method="post" class="w-full">
                     @csrf
                     <div class="grid gap-y-3 w-full">
                         <div>
@@ -61,7 +61,7 @@
             <div class="flex flex-row mt-3 justify-center">
                 <p class="block">
                     have account ?
-                    <a href="/public/login" class="text-teal-500 font-semibold hover:text-teal-700 hover:underline">
+                    <a href="/login" class="text-teal-500 font-semibold hover:text-teal-700 hover:underline">
                         Login
                     </a>
                 </p>
