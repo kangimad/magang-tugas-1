@@ -15,9 +15,7 @@ class OrganizationsController extends Controller
 {
     public function index(Request $request)
     {
-
         // dd($request->all());
-
         $organizations = Organization::query()
             ->with(['group', 'type', 'province', 'regency', 'district', 'village'])
             ->when($request->name, function ($query) use ($request) {
@@ -30,7 +28,30 @@ class OrganizationsController extends Controller
                 return $query->where('type_id', 'like', '%' . $request->type_id . '%');
             });
 
-        return view('organizations.index', [
+        return view('user.organizations.index', [
+            'title' => 'Organizations',
+            'subtitle' => 'Health Services',
+            'groups' => Group::all(),
+            'types' => Type::all(),
+            'organizations' => $organizations->paginate(10)
+        ]);
+    }
+    public function publicIndex(Request $request)
+    {
+        // dd($request->all());
+        $organizations = Organization::query()
+            ->with(['group', 'type', 'province', 'regency', 'district', 'village'])
+            ->when($request->name, function ($query) use ($request) {
+                return $query->where('name', 'like', '%' . $request->name . '%');
+            })
+            ->when($request->group_id, function ($query) use ($request) {
+                return $query->where('group_id', 'like', '%' . $request->group_id . '%');
+            })
+            ->when($request->type_id, function ($query) use ($request) {
+                return $query->where('type_id', 'like', '%' . $request->type_id . '%');
+            });
+
+        return view('public.organizations.index', [
             'title' => 'Organizations',
             'subtitle' => 'Health Services',
             'groups' => Group::all(),
@@ -41,7 +62,7 @@ class OrganizationsController extends Controller
 
     public function create()
     {
-        return view('organizations.create', [
+        return view('user.organizations.create', [
             'title' => 'Organizations',
             'subtitle' => 'Create',
             'groups' => Group::all(),
@@ -72,9 +93,7 @@ class OrganizationsController extends Controller
 
         Organization::create($validatedData);
 
-        return redirect()->route('organizations')->with('success', 'Data created!');
-
-
+        return redirect('/organizations')->with('success', 'Data created!');
 
         // dd('Registrasi berhasil', request()->all());
         // return view('organizations', ['data' => $data]);

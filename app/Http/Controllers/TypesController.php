@@ -9,7 +9,7 @@ class TypesController extends Controller
 {
     public function index()
     {
-        return view('types.index', [
+        return view('user.types.index', [
             'title' => 'Types',
             'subtitle' => 'Health Services',
             'types' => Type::all()

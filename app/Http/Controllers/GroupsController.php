@@ -9,7 +9,7 @@ class GroupsController extends Controller
 {
     public function index ()
     {
-        return view('groups.index', [
+        return view('user.groups.index', [
             'title' => 'Groups',
             'subtitle' => 'Health Services',
             'groups' => Group::all()
@@ -18,7 +18,7 @@ class GroupsController extends Controller
 
     public function show ($group)
     {
-        return view('groups.show', [
+        return view('user.groups.show', [
             'title' => 'Groups',
             'subtitle' => 'Health Services',
             'groups' => Group::find($group)
