@@ -1,8 +1,4 @@
 @extends('user.partials.user-layout')
-@section('content')
-    <div class="mx-3 py-5 font-serif">
-        <div class="flex justify-center items-center">
-            <h1 class="block font-bold text-xl">{{ $title }}</h1>
-        </div>
-    </div>
+@section('user-content')
+            <h1 class="font-bold text-xl">{{ $title }}</h1>
 @endsection

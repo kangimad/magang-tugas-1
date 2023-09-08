@@ -1,5 +1,5 @@
 @extends('user.partials.user-layout')
-@section('content')
+@section('user-content')
     <div class="px-48 w-screen">
         <div class="w-full mt-7">
             <h1 class="text-center text-3xl font-medium ">ORGANIZATIONS</h1>

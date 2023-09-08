@@ -1,6 +1,6 @@
 {{-- @dd($groups) --}}
 @extends('user.partials.user-layout')
-@section('content')
+@section('user-content')
     <div class=" pt-5 px-48 w-screen">
         {{-- ROW 1 --}}
         <div class="flex flex-row justify-center items-center">

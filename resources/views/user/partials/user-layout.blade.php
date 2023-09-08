@@ -13,13 +13,17 @@
 <body class="bg-gray-300">
     <div class="w-screen">
 
-        <section>
-            @include('user.partials.sidebar')
-        </section>
-
-        <div class="pt-20 mx-auto">
+        <div class="flex">
             <section>
-                @yield('content')
+                <div class=" flex flex-col border border-red-600 ml-48">
+                    @include('user.partials.sidebar')
+                </div>
+            </section>
+
+            <section>
+                <div class="columns-8 flex flex-col border border-blue-600 mr-48">
+                    @yield('user-content')
+                </div>
             </section>
         </div>
     </div>

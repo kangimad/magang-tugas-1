@@ -1,6 +1,6 @@
 @dd($groups)
 @extends('user.partials.user-layout')
-@section('content')
+@section('user-content')
     <div class="mx-3 py-5 font-serif">
         {{-- @if (session('success'))
             <div class=" w-3/12 mx-auto p-2 mb-4 font-semibold text-center text-sm text-green-800 rounded-lg bg-green-50">
