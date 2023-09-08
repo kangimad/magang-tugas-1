@@ -1,4 +1,4 @@
-@extends('partials.user-layout')
+@extends('user.partials.user-layout')
 @section('content')
     <div class="px-48 w-screen">
         DASHBOARD

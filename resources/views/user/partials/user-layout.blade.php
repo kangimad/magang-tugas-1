@@ -12,9 +12,11 @@
 
 <body class="bg-gray-300">
     <div class="w-screen">
-        <header>
-            @include('partials.header')
-        </header>
+
+        <section>
+            @include('user.partials.sidebar')
+        </section>
+
         <div class="pt-20 mx-auto">
             <section>
                 @yield('content')

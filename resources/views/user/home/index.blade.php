@@ -1,4 +1,4 @@
-@extends('partials.user-layout')
+@extends('user.partials.user-layout')
 @section('content')
     <div class="mx-3 py-5 font-serif">
         <div class="flex justify-center items-center">

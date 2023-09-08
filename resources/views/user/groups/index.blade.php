@@ -1,5 +1,5 @@
 {{-- @dd($groups); --}}
-@extends('partials.user-layout')
+@extends('user.partials.user-layout')
 @section('content')
     <div class="mx-3 py-5 font-serif">
         {{-- ROW 1 --}}

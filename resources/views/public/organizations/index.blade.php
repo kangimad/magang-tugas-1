@@ -1,4 +1,4 @@
-@extends('partials.public-layout')
+@extends('public.partials.public-layout')
 @section('content')
     <div class="px-48 w-screen">
         <div class="w-full mt-7">

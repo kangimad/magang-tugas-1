@@ -1,4 +1,4 @@
-@extends('partials.public-layout')
+@extends('public.partials.public-layout')
 @section('content')
     <div class="mx-3 py-5 font-serif flex flex-wrap justify-center items-center">
         <div class="p-5 rounded w-4/12 bg-gray-200 shadow-lg">

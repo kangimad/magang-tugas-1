@@ -1,4 +1,4 @@
-@extends('partials.public-layout')
+@extends('public.partials.public-layout')
 @section('content')
     <div class="mx-4 pt-5 flex flex-wrap justify-center font-serif border">
         <div class="p-5 rounded w-4/12 bg-gray-200 shadow-lg">
