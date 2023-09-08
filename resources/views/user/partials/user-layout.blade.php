@@ -10,42 +10,29 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
-<body class="bg-gray-300">
-    <div class="w-screen">
+<body>
+    <div class="max-w-screen-4xl bg-gray-200 gap-x-3 flex">
+        {{-- SIDEBAR --}}
+        @include('user.partials.sidebar')
+        {{-- END SIDEBAR --}}
 
-        <div class="flex">
-            <section>
-                <div class=" flex flex-col border border-red-600 ml-48 max-w-7xl">
-                    @include('user.partials.sidebar')
-                </div>
-            </section>
+        {{-- USER CONTENT --}}
+        @yield('user-content')
+        {{-- END USER CONTENT --}}
 
-            <section>
-                <div class="columns-8 flex flex-col">
-                    <div class="flex border border-blue-600 mr-48">
-                        @include('user.partials.header')
-                    </div>
-                    <div class="flex border border-yellow-600 mt-12 mr-48">
-                    @yield('user-content')
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-
-    <script>
-        function dropdown() {
-            let dropdown1 = document.getElementById("dropdown1")
-            let dropdownMenu = document.getElementById("dropdown-menu")
-            console.log(dropdownMenu.classList);
-            if (dropdownMenu.classList.contains('hidden')) {
-                console.log("on");
-                dropdownMenu.classList.remove('hidden')
-            }else {
-                dropdownMenu.classList.add('hidden')
-            }
-        }
-    </script>
+        <script>
+            // function dropdown() {
+            //     let dropdown1 = document.getElementById("dropdown1")
+            //     let dropdownMenu = document.getElementById("dropdown-menu")
+            //     console.log(dropdownMenu.classList);
+            //     if (dropdownMenu.classList.contains('hidden')) {
+            //         console.log("on");
+            //         dropdownMenu.classList.remove('hidden')
+            //     } else {
+            //         dropdownMenu.classList.add('hidden')
+            //     }
+            // }
+        </script>
 </body>
 
 </html>

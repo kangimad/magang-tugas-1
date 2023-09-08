@@ -1,14 +1,6 @@
-<div class="flex flex-col items-center justify-items-center fixed mr-48">
     {{-- HEADER --}}
     <div
-        class="flex flex-row items-center justify-items-center bg-teal-800 text-white font-bold shadow-lg">
-        <a href="/">Health Services</a></li>
-    </div>
-    {{-- END HEADER --}}
-
-    {{-- NAVBAR --}}
-    <div
-        class="flex flex-row items-center justify-items-center bg-teal-700 text-gray-300 text-sm font-semibold shadow-lg">
+        class="flex flex-row w-full px-3 py-3 items-center justify-items-center bg-teal-700 text-gray-300 text-sm font-semibold shadow-lg">
         <ul class="text-decoration-none flex gap-x-3">
                 @auth
                 <li><a href="/user/home"
@@ -66,5 +58,5 @@
             @endauth
         </ul>
     </div>
-    {{-- END NAVBAR --}}
+    {{-- END HEADER --}}
 </div>
