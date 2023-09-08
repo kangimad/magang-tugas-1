@@ -7,9 +7,9 @@
                 <p class=" text-gray-500 font-semibold text-sm text-start">Page 1 / Page 2 / Page 3</p>
             </div>
             <div class="flex-col w-8/12 my-auto">
-                <p class=" text-gray-500 font-semibold text-2xl text-center">Health Services</p>
+                <p class=" text-gray-500 font-bold text-3xl text-center">Health Services</p>
             </div>
-            <div class="flex-col w-3/12 my-auto text-xs">
+            <div class="flex-col w-3/12 my-auto text-sm">
                 <ul class="flex justify-end gap-x-1">
                     @auth
                         <li class="inline">
@@ -37,7 +37,7 @@
         {{-- END HEADER --}}
 
         {{-- MAIN CONTENT --}}
-        <div class="flex-row w-full px-7 py-5 bg-white rounded shadow border border-indigo-600">
+        <div class="flex-row mt-5 w-full px-5 py-4 bg-white rounded shadow border border-indigo-600">
             <p class="text-gray-500 font-medium text-lg text-justify">Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Temporibus hic impedit ducimus quas, iste possimus ex, dolorum quo repellendus
                 quos minus necessitatibus veniam alias cumque fugiat et voluptate blanditiis beatae voluptatibus
