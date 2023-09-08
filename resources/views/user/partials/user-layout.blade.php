@@ -15,14 +15,19 @@
 
         <div class="flex">
             <section>
-                <div class=" flex flex-col border border-red-600 ml-48">
+                <div class=" flex flex-col border border-red-600 ml-48 max-w-7xl">
                     @include('user.partials.sidebar')
                 </div>
             </section>
 
             <section>
-                <div class="columns-8 flex flex-col border border-blue-600 mr-48">
+                <div class="columns-8 flex flex-col">
+                    <div class="flex border border-blue-600 mr-48">
+                        @include('user.partials.header')
+                    </div>
+                    <div class="flex border border-yellow-600 mt-12 mr-48">
                     @yield('user-content')
+                    </div>
                 </div>
             </section>
         </div>
