@@ -9,7 +9,7 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('register.index', [
+        return view('public.register.index', [
             'title' => 'Register',
             'subtitle' => 'Health Servicer',
         ]);
