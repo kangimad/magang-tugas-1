@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Districts;
-use App\Models\Groups;
-use App\Models\Organizations;
-use App\Models\Provinces;
-use App\Models\Regencies;
-use App\Models\Types;
-use App\Models\Villages;
+use App\Models\District;
+use App\Models\Group;
+use App\Models\Organization;
+use App\Models\Province;
+use App\Models\Regency;
+use App\Models\Type;
+use App\Models\Village;
 use Illuminate\Http\Request;
 
 class OrganizationsController extends Controller
@@ -18,7 +18,7 @@ class OrganizationsController extends Controller
 
         // dd($request->all());
 
-        $organizations = Organizations::query()
+        $organizations = Organization::query()
             ->with(['group', 'type', 'province', 'regency', 'district', 'village'])
             ->when($request->name, function ($query) use ($request) {
                 return $query->where('name', 'like', '%' . $request->name . '%');
@@ -33,8 +33,8 @@ class OrganizationsController extends Controller
         return view('organizations.index', [
             'title' => 'Organizations',
             'subtitle' => 'Health Services',
-            'groups' => Groups::all(),
-            'types' => Types::all(),
+            'groups' => Group::all(),
+            'types' => Type::all(),
             'organizations' => $organizations->paginate(10)
         ]);
     }
@@ -44,12 +44,12 @@ class OrganizationsController extends Controller
         return view('organizations.create', [
             'title' => 'Organizations',
             'subtitle' => 'Create',
-            'groups' => Groups::all(),
-            'types' => Types::all(),
-            'provinces' => Provinces::all(),
-            'regencies' => Regencies::all(),
-            'districts' => Districts::all(),
-            'villages' => Villages::all()
+            'groups' => Group::all(),
+            'types' => Type::all(),
+            'provinces' => Province::all(),
+            'regencies' => Regency::all(),
+            'districts' => District::all(),
+            'villages' => Village::all()
         ]);
     }
 
@@ -70,7 +70,7 @@ class OrganizationsController extends Controller
             'village_id' => 'required',
         ]);
 
-        Organizations::create($validatedData);
+        Organization::create($validatedData);
 
         return redirect()->route('organizations')->with('success', 'Data created!');
 

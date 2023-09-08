@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Organizations extends Model
+class Organization extends Model
 {
     use HasFactory;
 
@@ -17,31 +17,31 @@ class Organizations extends Model
 
     public function group()
     {
-        return $this->belongsTo(Groups::class);
+        return $this->belongsTo(Group::class);
     }
 
     public function type()
     {
-        return $this->belongsTo(Types::class);
+        return $this->belongsTo(Type::class);
     }
 
     public function province()
     {
-        return $this->belongsTo(Provinces::class);
+        return $this->belongsTo(Province::class);
     }
 
     public function regency()
     {
-        return $this->belongsTo(Regencies::class);
+        return $this->belongsTo(Regency::class);
     }
 
     public function district()
     {
-        return $this->belongsTo(Districts::class);
+        return $this->belongsTo(District::class);
     }
 
     public function village()
     {
-        return $this->belongsTo(Villages::class);
+        return $this->belongsTo(Village::class);
     }
 }

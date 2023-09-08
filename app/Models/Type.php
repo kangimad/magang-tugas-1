@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use App\Models\Organizations;
+use App\Models\Organization;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Groups extends Model
+class Type extends Model
 {
     use HasFactory;
 
-    protected  $table = 'groups';
+    protected  $table = 'types';
 
     protected $guarded = ['id'];
 
@@ -18,6 +18,6 @@ class Groups extends Model
 
     public function organization()
     {
-        return $this->hasMany(Organizations::class, 'group_id');
+        return $this->hasMany(Organization::class, 'type_id');
     }
 }

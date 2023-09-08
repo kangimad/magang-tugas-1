@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Groups;
-use PHPUnit\Framework\Attributes\Group;
+use App\Models\Group;
+use Illuminate\Routing\Controller;
 
 class GroupsController extends Controller
 {
@@ -12,16 +12,16 @@ class GroupsController extends Controller
         return view('groups.index', [
             'title' => 'Groups',
             'subtitle' => 'Health Services',
-            'groups' => Groups::all()
+            'groups' => Group::all()
         ]);
     }
 
-    public function show ($groups)
+    public function show ($group)
     {
         return view('groups.show', [
             'title' => 'Groups',
             'subtitle' => 'Health Services',
-            'groups' => Groups::find($groups)
+            'groups' => Group::find($group)
         ]);
     }
 }
