@@ -74,7 +74,7 @@
     <a href="https://www.instagram.com/imaduddin____/" target="_blank">
         <div class="cursor-pointer flex-row w-full px-5 py-5">
             <p
-                class="text-center text-gray-100 font-medium tracking-widest text-md hover:text-cyan-400 hover:bg-gray-950 rounded py-5 pr-1 shadow-xl">
+                class="text-center text-gray-100 font-medium tracking-widest text-md hover:text-cyan-400 hover:bg-gray-950 rounded-lg py-5 pr-1 shadow-xl">
                 @kangimad
             </p>
         </div>
