@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="max-w-screen-4xl bg-gray-200 gap-x-3 flex">
+    <div class="max-w-screen-4xl min-h-screen bg-gray-200 gap-x-3 flex">
         {{-- SIDEBAR --}}
         @include('user.partials.sidebar')
         {{-- END SIDEBAR --}}
