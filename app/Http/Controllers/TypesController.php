@@ -13,7 +13,7 @@ class TypesController extends Controller
             'app' => 'Health Services',
             'title' => 'Types',
             'subtitle' => 'Form',
-            'page' => 'form-types',
+            'page' => 'types',
             'types' => Type::all()
         ]);
     }
