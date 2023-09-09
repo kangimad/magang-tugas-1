@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $app }}</title>
     @vite('resources/css/app.css')
-    <link rel="stylesheet" href="{{ asset('mystyle.css') }}">
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
@@ -27,19 +27,8 @@
             {{-- END MAIN CONTENT --}}
         </div>
         {{-- END USER CONTENT --}}
-        <script>
-            // function dropdown() {
-            //     let dropdown1 = document.getElementById("dropdown1")
-            //     let dropdownMenu = document.getElementById("dropdown-menu")
-            //     console.log(dropdownMenu.classList);
-            //     if (dropdownMenu.classList.contains('hidden')) {
-            //         console.log("on");
-            //         dropdownMenu.classList.remove('hidden')
-            //     } else {
-            //         dropdownMenu.classList.add('hidden')
-            //     }
-            // }
-        </script>
+
+        <scrip src="{{ asset('script.js') }}" type="text/javascript" />
 </body>
 
 </html>
