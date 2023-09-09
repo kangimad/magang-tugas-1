@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 
 class TypesController extends Controller
 {
-    public function index()
+    public function userIndex()
     {
         return view('user.types.index', [
+            'app' => 'Health Services',
             'title' => 'Types',
-            'subtitle' => 'Health Services',
+            'subtitle' => 'Form',
+            'page' => 'form-types',
             'types' => Type::all()
         ]);
     }

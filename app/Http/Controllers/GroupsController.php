@@ -7,11 +7,12 @@ use Illuminate\Routing\Controller;
 
 class GroupsController extends Controller
 {
-    public function index ()
+    public function userIndex ()
     {
         return view('user.groups.index', [
+            'app' => 'Health Services',
             'title' => 'Groups',
-            'subtitle' => 'Health Services',
+            'page' => 'groups',
             'groups' => Group::all()
         ]);
     }
@@ -19,8 +20,10 @@ class GroupsController extends Controller
     public function show ($group)
     {
         return view('user.groups.show', [
+            'app' => 'Health Services',
             'title' => 'Groups',
-            'subtitle' => 'Health Services',
+            'subtitle' => 'opoyo',
+            'page' => 'groups',
             'groups' => Group::find($group)
         ]);
     }
