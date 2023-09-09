@@ -1,62 +1,35 @@
-    {{-- HEADER --}}
-    <div
-        class="flex flex-row w-full px-3 py-3 items-center justify-items-center bg-teal-700 text-gray-300 text-sm font-semibold shadow-lg">
-        <ul class="text-decoration-none flex gap-x-3">
-                @auth
-                <li><a href="/user/home"
-                        class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Home' ? 'text-white underline' : '' }}">Home</a>
-                </li>
-                <li><a href="/user/organizations"
-                        class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Organizations' ? 'text-white underline' : '' }}">Organizations</a>
-                </li>
-                <li><a href="/user/groups"
-                        class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Groups' ? 'text-white underline' : '' }}">Groups</a>
-                </li>
-                <li><a href="/user/types"
-                        class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Types' ? 'text-white underline' : '' }}">Types</a>
-                </li>
-                @endauth
-            </ul>
-        <ul class="ml-auto text-decoration-none flex gap-x-3">
-            @auth
-                <li class="flex items-center">
-                    <p class="inline">Welcome back,</p>
-                    <div>
-                        <button class="relative flex items-center ml-2 group" id="dropdown1" onclick="dropdown()">
-                            {{ auth()->user()->username }} |
-                            <span class="inline ml-1 hover:bg-teal-800 rounded">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                                </svg>
-                            </span>
-                        </button>
-                        <div id="dropdown-menu"
-                            class="absolute hidden group-focus:block top-full mt-1 rounded shadow-lg bg-teal-600">
-                            <ul>
-                                <li class="px-3 py-1 text-xs text-left border-b hover:rounded-t hover:bg-teal-700"><a
-                                        href="/user/dashboard">Dashboard</a></li>
-                                <li class="px-3 py-1 text-xs text-left hover:rounded-b hover:bg-teal-700">
-                                    <form action="/logout" method="post">
-                                            @csrf
-                                            <button type="submit"
-                                                class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Logout' ? 'text-white underline' : '' }}">
-                                                <i class="bi bi-box-arrow-left">
-                                                </i>Logout</button>
-                                        </form>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-            @else
-                <li>
-                    <a href="/login"
-                        class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Login' ? 'text-white underline' : '' }}">
-                        <i class="bi bi-box-arrow-in-right">
-                        </i> Login</a>
-                </li>
-            @endauth
-        </ul>
-    </div>
-    {{-- END HEADER --}}
-</div>
+        <div class="flex w-full mt-2 py-3 mb-1">
+            <div class="flex-col w-2/12 my-auto">
+                <p class=" text-gray-500 font-semibold text-sm text-start"><i class="bi bi-house-fill"></i> / {{ $title }} @if (isset($subtitle))
+                    / {{ $subtitle }}
+                @endif</p>
+            </div>
+            <div class="flex-col w-8/12 my-auto">
+                <p class=" text-gray-500 font-bold text-3xl text-center">{{ $title }}</p>
+            </div>
+            <div class="flex-col w-3/12 my-auto text-sm">
+                <ul class="flex justify-end">
+                    @auth
+                        <li class="inline py-1">
+                            <p class="inline">Welcome back,
+                                {{ auth()->user()->username }} |
+                            </p>
+                        </li>
+                        <li class="inline ml-1 px-2 py-1 rounded hover:text-white hover:bg-teal-700 hover:underline"
+                            cursor-pointer>
+                            <form action="/logout" method="post">
+                                @csrf
+                                <button type="submit">
+                                    <i class="bi bi-box-arrow-left"></i> Logout
+                                </button>
+                            </form>
+                        </li>
+                    @else
+                        <a href="/login"
+                            class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Login' ? 'text-white underline' : '' }}">
+                            <i class="bi bi-box-arrow-in-right">
+                            </i> Login</a>
+                    @endauth
+                </ul>
+            </div>
+        </div>

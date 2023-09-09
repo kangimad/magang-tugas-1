@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $title }} - {{ $subtitle }}</title>
+    <title>{{ $app }}</title>
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="{{ asset('mystyle.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -17,9 +17,16 @@
         {{-- END SIDEBAR --}}
 
         {{-- USER CONTENT --}}
-        @yield('user-content')
-        {{-- END USER CONTENT --}}
+        <div class="flex-col mr-5 w-10/12">
+            {{-- HEADER --}}
+            @include('user.partials.header')
+            {{-- END HEADER --}}
 
+            {{-- MAIN CONTENT --}}
+            @yield('user-content')
+            {{-- END MAIN CONTENT --}}
+        </div>
+        {{-- END USER CONTENT --}}
         <script>
             // function dropdown() {
             //     let dropdown1 = document.getElementById("dropdown1")

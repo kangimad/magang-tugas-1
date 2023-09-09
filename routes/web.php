@@ -37,24 +37,27 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register-p
 Route::get('/', [OrganizationsController::class, 'publicIndex'])->name('pub-organizations');
 
 Route::group(['middleware' => ['auth']], function () {
-    
+
     Route::get('/user/home', function () {
-    return view('user.home.index', [
-            'title' => 'Home',
-            'subtitle' => 'Health Services'
+        return view('user.home.index', [
+            'app' => 'Health Services',
+            'title' => 'Home'
         ]);
     });
 
-    Route::get('/user/dashboard', [DashboardController::class, 'index'])->name('us-dashboard');
+    Route::get('/user/dashboard', [DashboardController::class, 'userIndex'])->name('us-dashboard');
 
-    Route::get('/user/organizations', [OrganizationsController::class, 'index'])->name('us-organizations');
-    Route::post('/user/organizations', [OrganizationsController::class, 'store'])->name('us-organizations-post');
-    Route::get('/user/organizations/create', [OrganizationsController::class, 'create'])->name('us-organizations-create');
+    Route::get('/user/organizations', [OrganizationsController::class, 'userIndex'])->name('us-organizations');
+    Route::post('/user/organizations', [OrganizationsController::class, 'userStore'])->name('us-organizations-store');
+    Route::get('/user/organizations/create', [OrganizationsController::class, 'userCreate'])->name('us-organizations-create');
 
-    Route::get('/user/groups', [GroupsController::class, 'index'])->name('us-groups');
-    Route::get('/user/groups/{group:name}', [GroupsController::class, 'show'])->name('us-groups-detail');
+    Route::get('/user/groups', [GroupsController::class, 'userIndex'])->name('us-groups');
+    Route::post('/user/groups', [GroupsController::class, 'userStore'])->name('us-groups-store');
+    Route::get('/user/groups/create', [GroupsController::class, 'userCreate'])->name('us-groups-create');
 
-    Route::get('/user/types', [TypesController::class, 'index'])->name('us-types');
+    Route::get('/user/types', [TypesController::class, 'userIndex'])->name('us-types');
+    Route::post('/user/types', [TypesController::class, 'userStore'])->name('us-types-store');
+    Route::get('/user/types/create', [TypesController::class, 'userCreate'])->name('us-types-create');
 });
 
 // Route::get('/data'), [];

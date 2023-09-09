@@ -1,43 +1,7 @@
 @extends('user.partials.user-layout')
 @section('user-content')
-    <div class="flex-col mr-5 w-10/12 border border-red-600 p-1">
-        {{-- HEADER --}}
-        <div class="flex w-full mt-2 py-3 mb-1 border border-teal-600">
-            <div class="flex-col w-2/12 my-auto">
-                <p class=" text-gray-500 font-semibold text-sm text-start">P 1 / SP 1 / SSP 3</p>
-            </div>
-            <div class="flex-col w-8/12 my-auto">
-                <p class=" text-gray-500 font-bold text-3xl text-center">Nama Halaman</p>
-            </div>
-            <div class="flex-col w-3/12 my-auto text-sm">
-                <ul class="flex justify-end">
-                    @auth
-                        <li class="inline py-1">
-                            <p class="inline">Welcome back,
-                                {{ auth()->user()->username }} |
-                            </p>
-                        </li>
-                        <li class="inline ml-1 px-2 py-1 rounded hover:text-white hover:bg-teal-700 hover:underline" cursor-pointer>
-                            <form action="/logout" method="post">
-                            @csrf
-                            <button type="submit">
-                                <i class="bi bi-box-arrow-left"></i> Logout
-                            </button>
-                        </form>
-                        </li>
-                    @else
-                        <a href="/login"
-                            class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Login' ? 'text-white underline' : '' }}">
-                            <i class="bi bi-box-arrow-in-right">
-                            </i> Login</a>
-                    @endauth
-                </ul>
-            </div>
-        </div>
-        {{-- END HEADER --}}
-
-        {{-- MAIN CONTENT --}}
-        <div class="flex-row mt-5 w-full px-5 py-4 bg-white rounded shadow border border-indigo-600">
+        {{-- USER CONTENT --}}
+        <div class="flex-row mt-5 w-full px-5 py-4 bg-white rounded shadow">
             <p class="text-gray-500 font-medium text-lg text-justify">Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Temporibus hic impedit ducimus quas, iste possimus ex, dolorum quo repellendus
                 quos minus necessitatibus veniam alias cumque fugiat et voluptate blanditiis beatae voluptatibus
@@ -93,6 +57,5 @@
                 nemo similique nobis nostrum sit explicabo. Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Molestias, voluptate! Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
-        {{-- END MAIN CONTENT --}}
-    </div>
+        {{-- END USER CONTENT --}}
 @endsection

@@ -1,16 +1,9 @@
 {{-- @dd($groups) --}}
 @extends('user.partials.user-layout')
 @section('user-content')
-    <div class=" pt-5 px-48 w-screen">
-        {{-- ROW 1 --}}
-        <div class="flex flex-row justify-center items-center">
-            <p class="text-2xl font-bold">New Oganization Form</p>
-        </div>
-        {{-- END ROW 1 --}}
-
-        {{-- ROW 2 --}}
-        <div class="flex flex-row mt-5 py-2 justify-center items-center bg-white rounded ">
-                <form class="w-full" action="/organizations" method="post">
+        {{-- USER CONTENTpwe --}}
+        <div class="flex-row mt-5 w-full px-5 py-4 bg-white rounded shadow">
+                <form class="w-full" action="/user/organizations" method="post">
                     @csrf
                     {{-- CODE, NAME --}}
                     <div class="flex flex-wrap mb-3 gap-y-3">
@@ -19,7 +12,7 @@
                                 Code
                             </label>
                             <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm @error('code') ring-2 ring-red-600 @enderror"
+                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm @error('code') ring-2 ring-red-600 @enderror"
                                 id="code" name="code" type="text" placeholder="code (4 digit)" value="{{ old('code') }}">
                                 @error('code')
                                     <div class="mt-2 text-xs text-red-600">{{ $message }}</div>
@@ -30,7 +23,7 @@
                                 Name
                             </label>
                             <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm @error('name') ring-2 ring-red-600 @enderror"
+                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm @error('name') ring-2 ring-red-600 @enderror"
                                 id="name" name="name" type="text" placeholder="name" value="{{ old('name') }}">
                                 @error('name')
                                     <div class="mt-2 text-xs text-red-600">{{ $message }}</div>
@@ -45,7 +38,7 @@
                             </label>
                             <div class="relative">
                                 <select
-                                    class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm @error('group_id') ring-2 ring-red-600 @enderror"
+                                    class="block appearance-none w-full bg-gray-200 border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm @error('group_id') ring-2 ring-red-600 @enderror"
                                     id="group_id" name="group_id">
                                     <option>Select one</option>
                                     @foreach ($groups as $group)
@@ -64,7 +57,7 @@
                             </label>
                             <div class="relative">
                                 <select
-                                    class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm @error('type_id') ring-2 ring-red-600 @enderror"
+                                    class="block appearance-none w-full bg-gray-200 border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm @error('type_id') ring-2 ring-red-600 @enderror"
                                     id="type_id" name="type_id">
                                     <option aria-required="" placeholder="Select one">Select one</option>
                                     @foreach ($types as $type)
@@ -82,7 +75,7 @@
                                 Class
                             </label>
                             <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm @error('class') ring-2 ring-red-600 @enderror"
+                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm @error('class') ring-2 ring-red-600 @enderror"
                                 id="class" name="class" type="text" placeholder="class" value="{{ old('class') }}">
                                 @error('class')
                                     <div class="mt-2 text-xs text-red-600">{{ $message }}</div>
@@ -96,7 +89,7 @@
                                 Address
                             </label>
                             <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm @error('address') ring-2 ring-red-600 @enderror"
+                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm @error('address') ring-2 ring-red-600 @enderror"
                                 id="address" name="address" type="text" placeholder="Address" value="{{ old('address') }}">
                                 @error('address')
                                     <div class="mt-2 text-xs text-red-600">{{ $message }}</div>
@@ -107,7 +100,7 @@
                                 Phone
                             </label>
                             <input
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm @error('phone') ring-2 ring-red-600 @enderror"
+                                class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-400 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm @error('phone') ring-2 ring-red-600 @enderror"
                                 id="phone" name="phone" type="text" placeholder="Phone" value="{{ old('phone') }}">
                                 @error('phone')
                                     <div class="mt-2 text-xs text-red-600">{{ $message }}</div>
@@ -122,7 +115,7 @@
                             </label>
                             <div class="relative">
                                 <select
-                                    class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm"
+                                    class="block appearance-none w-full bg-gray-200 border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm"
                                     id="province_id" name="province_id">
                                     <option aria-required="" placeholder="Select one">Select one</option>
                                     @foreach ($provinces as $province)
@@ -138,7 +131,7 @@
                             </label>
                             <div class="relative">
                                 <select
-                                    class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm"
+                                    class="block appearance-none w-full bg-gray-200 border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm"
                                     id="regency_id" name="regency_id">
                                     <option aria-required="" placeholder="Select one">Select one</option>
                                     @foreach ($regencies as $regency)
@@ -155,7 +148,7 @@
                             </label>
                             <div class="relative">
                                 <select
-                                    class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm"
+                                    class="block appearance-none w-full bg-gray-200 border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm"
                                     id="district_id" name="district_id">
                                     <option aria-required="" placeholder="Select one">Select one</option>
                                     @foreach ($districts as $district)
@@ -172,7 +165,7 @@
                             </label>
                             <div class="relative">
                                 <select
-                                    class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm"
+                                    class="block appearance-none w-full bg-gray-200 border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-sm"
                                     id="village_id" name="village_id">
                                     <option aria-required="" placeholder="Select one">Select one</option>
                                     @foreach ($villages as $village)
@@ -196,7 +189,7 @@
                     </div>
                 </form>
         </div>
-        {{-- END ROW 2 --}}
+        {{-- END USER CONTENTpwe --}}
 
     </div>
 @endsection

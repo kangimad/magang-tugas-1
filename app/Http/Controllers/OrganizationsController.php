@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 
 class OrganizationsController extends Controller
 {
-    public function index(Request $request)
+    public function userIndex(Request $request)
     {
         // dd($request->all());
         $organizations = Organization::query()
@@ -29,8 +29,8 @@ class OrganizationsController extends Controller
             });
 
         return view('user.organizations.index', [
+            'app' => 'Health Services',
             'title' => 'Organizations',
-            'subtitle' => 'Health Services',
             'page' => 'organizations',
             'groups' => Group::all(),
             'types' => Type::all(),
@@ -53,8 +53,8 @@ class OrganizationsController extends Controller
             });
 
         return view('public.organizations.index', [
+            'app' => 'Health Services',
             'title' => 'Organizations',
-            'subtitle' => 'Health Services',
             'page' => 'organizations',
             'groups' => Group::all(),
             'types' => Type::all(),
@@ -65,9 +65,10 @@ class OrganizationsController extends Controller
     public function publicCreate()
     {
         return view('user.organizations.create', [
+            'app' => 'Health Services',
             'title' => 'Organizations',
-            'page' => 'form-organzation',
-            'subtitle' => 'Create',
+            'page' => 'form-organization',
+            'subtitle' => 'Form',
             'groups' => Group::all(),
             'types' => Type::all(),
             'provinces' => Province::all(),
@@ -76,12 +77,13 @@ class OrganizationsController extends Controller
             'villages' => Village::all()
         ]);
     }
-    public function UserCreate()
+    public function userCreate()
     {
         return view('user.organizations.create', [
+            'app' => 'Health Services',
             'title' => 'Organizations',
-            'page' => 'form-organzation',
-            'subtitle' => 'Create',
+            'page' => 'form-organization',
+            'subtitle' => 'form',
             'groups' => Group::all(),
             'types' => Type::all(),
             'provinces' => Province::all(),
@@ -91,7 +93,7 @@ class OrganizationsController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function userStore(Request $request)
     {
 
         $validatedData = $request->validate([
@@ -110,7 +112,7 @@ class OrganizationsController extends Controller
 
         Organization::create($validatedData);
 
-        return redirect('/organizations')->with('success', 'Data created!');
+        return redirect('/user/organizations')->with('success', 'Data created!');
 
         // dd('Registrasi berhasil', request()->all());
         // return view('organizations', ['data' => $data]);
