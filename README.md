@@ -10,4 +10,6 @@
 ## About This App
 
 Magang tugas 1 ini adalah tugas yang diberikan oleh Pembimbing magang saya di CV Kinaryatama Raharja
-, Mas Theo Wicaksono, S. Kom
+, Mas Theo Wicaksono, S. Kom.
+
+Pada tugas ini, beliau memberi instruksi saya untuk membuat sebuah aplikasi berbasis web menggunakan bahasa PHP dengan framework Laravel 10.
