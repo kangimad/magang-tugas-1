@@ -2,25 +2,25 @@
 @section('user-content')
     <div class="flex-col mr-5 w-10/12 border border-red-600 p-1">
         {{-- HEADER --}}
-        <div class="flex w-full py-3 mb-1 border border-teal-600">
+        <div class="flex w-full mt-2 py-3 mb-1 border border-teal-600">
             <div class="flex-col w-2/12 my-auto">
-                <p class=" text-gray-500 font-semibold text-sm text-start">Page 1 / Page 2 / Page 3</p>
+                <p class=" text-gray-500 font-semibold text-sm text-start">P 1 / SP 1 / SSP 3</p>
             </div>
             <div class="flex-col w-8/12 my-auto">
-                <p class=" text-gray-500 font-bold text-3xl text-center">Health Services</p>
+                <p class=" text-gray-500 font-bold text-3xl text-center">Nama Halaman</p>
             </div>
             <div class="flex-col w-3/12 my-auto text-sm">
-                <ul class="flex justify-end gap-x-1">
+                <ul class="flex justify-end">
                     @auth
-                        <li class="inline">
+                        <li class="inline py-1">
                             <p class="inline">Welcome back,
                                 {{ auth()->user()->username }} |
                             </p>
                         </li>
-                        <li class="inline">
+                        <li class="inline ml-1 px-2 py-1 rounded hover:text-white hover:bg-teal-700 hover:underline" cursor-pointer>
                             <form action="/logout" method="post">
                             @csrf
-                            <button type="submit" class="hover:text-gray-950 hover:underline cursor-pointer">
+                            <button type="submit">
                                 <i class="bi bi-box-arrow-left"></i> Logout
                             </button>
                         </form>

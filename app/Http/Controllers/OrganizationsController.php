@@ -31,9 +31,10 @@ class OrganizationsController extends Controller
         return view('user.organizations.index', [
             'title' => 'Organizations',
             'subtitle' => 'Health Services',
+            'page' => 'organizations',
             'groups' => Group::all(),
             'types' => Type::all(),
-            'organizations' => $organizations->paginate(10)
+            'organizations' => $organizations->paginate(15)
         ]);
     }
     public function publicIndex(Request $request)
@@ -54,16 +55,32 @@ class OrganizationsController extends Controller
         return view('public.organizations.index', [
             'title' => 'Organizations',
             'subtitle' => 'Health Services',
+            'page' => 'organizations',
             'groups' => Group::all(),
             'types' => Type::all(),
-            'organizations' => $organizations->paginate(10)
+            'organizations' => $organizations->paginate(15)
         ]);
     }
 
-    public function create()
+    public function publicCreate()
     {
         return view('user.organizations.create', [
             'title' => 'Organizations',
+            'page' => 'form-organzation',
+            'subtitle' => 'Create',
+            'groups' => Group::all(),
+            'types' => Type::all(),
+            'provinces' => Province::all(),
+            'regencies' => Regency::all(),
+            'districts' => District::all(),
+            'villages' => Village::all()
+        ]);
+    }
+    public function UserCreate()
+    {
+        return view('user.organizations.create', [
+            'title' => 'Organizations',
+            'page' => 'form-organzation',
             'subtitle' => 'Create',
             'groups' => Group::all(),
             'types' => Type::all(),

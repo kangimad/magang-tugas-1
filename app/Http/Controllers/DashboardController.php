@@ -9,6 +9,7 @@ class DashboardController extends Controller
     public function index() {
         return view('user.dashboard.index', [
             'title' => 'Dashboard',
+            'page' => 'dashboard',
             'subtitle' => 'Health Services',
         ]);
     }
