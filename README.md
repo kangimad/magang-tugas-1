@@ -14,6 +14,6 @@ Magang tugas 1 ini adalah tugas yang diberikan oleh Pembimbing magang saya di CV
 
 Pada tugas ini, beliau memberi instruksi saya untuk membuat sebuah aplikasi berbasis web menggunakan bahasa PHP dengan framework Laravel 10.
 
-Untuk menjalankan aplikasi ini, silahkan buat database dengan nama "health-services" dahulu untuk kemudian menjalankan migrasi:fresh dan db:seed.
+Untuk menjalankan aplikasi ini, silahkan buat database dengan nama "health_services" dahulu untuk kemudian menjalankan migrasi:fresh dan db:seed.
 
 Terimakasih 🙏
