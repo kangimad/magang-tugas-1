@@ -13,3 +13,7 @@ Magang tugas 1 ini adalah tugas yang diberikan oleh Pembimbing magang saya di CV
 , Mas Theo Wicaksono, S. Kom.
 
 Pada tugas ini, beliau memberi instruksi saya untuk membuat sebuah aplikasi berbasis web menggunakan bahasa PHP dengan framework Laravel 10.
+
+Untuk menjalankan aplikasi ini, silahkan buat database dengan nama "health-services" dahulu untuk kemudian menjalankan migrasi:fresh dan db:seed.
+
+Terimakasih 🙏

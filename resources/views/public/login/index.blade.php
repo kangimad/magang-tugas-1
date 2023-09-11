@@ -1,41 +1,41 @@
 @extends('public.partials.public-layout')
 @section('content')
-    <div class="mx-3 py-5 font-serif flex flex-wrap justify-center items-center">
-        <div class="p-5 rounded w-4/12 bg-gray-200 shadow-lg">
+    <div class="mx-3 py-16 flex flex-wrap justify-center items-center">
+        <div class="p-20 rounded w-4/12 bg-gray-200 shadow-lg text-lg">
             @if (session('success'))
-                <div class=" w-1/2 mx-auto p-2 mb-4 font-semibold text-center text-sm text-green-800 rounded-lg bg-green-50">
+                <div class=" w-1/2 mx-auto p-2 mb-4 font-semibold text-center text-white bg-green-800 rounded-lg">
                     <p>{{ session('success') }}</p>
                 </div>
             @endif
             @if (session('loginError'))
-                <div class=" w-1/2 mx-auto p-2 mb-4 font-semibold text-center text-sm text-red-800 rounded-lg bg-green-50">
+                <div class=" w-1/2 mx-auto p-2 mb-4 font-semibold text-center text-white  bg-red-800 rounded-lg">
                     <p>{{ session('loginError') }}</p>
                 </div>
             @endif
             <div class="flex flex-row justify-center items-center">
-                <p class="font-bold">LOGIN</p>
+                <p class="font-bold text-3xl">LOGIN</p>
             </div>
             <div class="flex flex-row w-full mt-5">
                 <form action="/login" method="post" class="w-full">
                     @csrf
                     <div class="grid gap-y-5 w-full">
                         <div>
-                            <label for="username" class="block tracking-wide text-gray-700 text-xs font-bold mb-2">
+                            <label for="username" class="block tracking-wide text-gray-700 text-sm font-bold mb-2">
                                 Username
                             </label>
                             <input type="text" name="username" id="username" placeholder="username"
                                 value="{{ old('username') }}"
-                                class="px-3 py-2 rounded outline-none border  w-full @error('username') ring-1 ring-red-600 @enderror">
+                                class="px-3 py-2 rounded outline-none border  w-full text-sm @error('username') ring-1 ring-red-600 @enderror">
                             @error('username')
                                 <div class="mt-2 text-xs text-red-600">{{ $message }}</div>
                             @enderror
                         </div>
                         <div>
-                            <label for="password" class="block tracking-wide text-gray-700 text-xs font-bold mb-2">
+                            <label for="password" class="block tracking-wide text-gray-700 text-sm font-bold mb-2">
                                 Password
                             </label>
                             <input type="password" name="password" id="password" placeholder="password"
-                                class="px-3 py-2 rounded outline-none border  w-full @error('password') ring-1 ring-red-600 @enderror">
+                                class="px-3 py-2 rounded outline-none border  w-full text-sm @error('password') ring-1 ring-red-600 @enderror">
                                 @error('password')
                                 <div class="mt-2 text-xs text-red-600">{{ $message }}</div>
                             @enderror
