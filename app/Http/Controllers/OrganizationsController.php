@@ -55,7 +55,6 @@ class OrganizationsController extends Controller
         return view('public.organizations.index', [
             'app' => 'Health Services',
             'title' => 'Organizations',
-            'page' => 'organizations',
             'groups' => Group::all(),
             'types' => Type::all(),
             'organizations' => $organizations->paginate(15)

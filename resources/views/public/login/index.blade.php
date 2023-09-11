@@ -1,7 +1,7 @@
 @extends('public.partials.public-layout')
 @section('content')
     <div class="mx-3 py-16 flex flex-wrap justify-center items-center">
-        <div class="p-20 rounded w-4/12 bg-gray-200 shadow-lg text-lg">
+        <div class="p-20 rounded-xl w-3/12 bg-gray-100 text-gray-500 shadow-lg text-lg">
             @if (session('success'))
                 <div class=" w-1/2 mx-auto p-2 mb-4 font-semibold text-center text-white bg-green-800 rounded-lg">
                     <p>{{ session('success') }}</p>
@@ -12,15 +12,16 @@
                     <p>{{ session('loginError') }}</p>
                 </div>
             @endif
+
             <div class="flex flex-row justify-center items-center">
-                <p class="font-bold text-3xl">LOGIN</p>
+                <p class="font-bold text-3xl tracking-widest">LOGIN</p>
             </div>
             <div class="flex flex-row w-full mt-5">
                 <form action="/login" method="post" class="w-full">
                     @csrf
                     <div class="grid gap-y-5 w-full">
                         <div>
-                            <label for="username" class="block tracking-wide text-gray-700 text-sm font-bold mb-2">
+                            <label for="username" class="block tracking-wide text-gray-500 text-sm font-bold mb-2">
                                 Username
                             </label>
                             <input type="text" name="username" id="username" placeholder="username"
@@ -31,12 +32,12 @@
                             @enderror
                         </div>
                         <div>
-                            <label for="password" class="block tracking-wide text-gray-700 text-sm font-bold mb-2">
+                            <label for="password" class="block tracking-wide text-gray-500 text-sm font-bold mb-2">
                                 Password
                             </label>
                             <input type="password" name="password" id="password" placeholder="password"
                                 class="px-3 py-2 rounded outline-none border  w-full text-sm @error('password') ring-1 ring-red-600 @enderror">
-                                @error('password')
+                            @error('password')
                                 <div class="mt-2 text-xs text-red-600">{{ $message }}</div>
                             @enderror
                         </div>
@@ -50,9 +51,9 @@
                 </form>
             </div>
             <div class="flex flex-row mt-3 justify-center">
-                <p class="block">
+                <p class="block  text-sm">
                     don't have account ?
-                    <a href="/register" class="text-teal-500 font-semibold hover:text-teal-700 hover:underline">
+                    <a href="/register" class="text-teal-500 font-semibold hover:text-teal-700 hover:underline  text-sm">
                         Register
                     </a>
                 </p>

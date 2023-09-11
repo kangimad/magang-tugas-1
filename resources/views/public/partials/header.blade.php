@@ -8,25 +8,9 @@
 
     {{-- NAVBAR --}}
     <div
-        class="flex flex-row items-center px-48 py-2 justify-items-center w-full bg-teal-700 text-gray-300 text-sm font-semibold shadow-lg">
-        <ul class="text-decoration-none flex gap-x-3">
-                @auth
-                <li><a href="/user/home"
-                        class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Home' ? 'text-white underline' : '' }}">Home</a>
-                </li>
-                <li><a href="/user/organizations"
-                        class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Organizations' ? 'text-white underline' : '' }}">Organizations</a>
-                </li>
-                <li><a href="/user/groups"
-                        class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Groups' ? 'text-white underline' : '' }}">Groups</a>
-                </li>
-                <li><a href="/user/types"
-                        class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Types' ? 'text-white underline' : '' }}">Types</a>
-                </li>
-                @endauth
-            </ul>
-        <ul class="ml-auto text-decoration-none flex gap-x-3">
-            @auth
+        class="flex flex-row items-center px-48 py-2 justify-items-center w-full bg-teal-700 text-gray-300 text-sm font-semibold shadow-lg justify-end">
+        @auth
+            <ul>
                 <li class="flex items-center">
                     <p class="inline">Welcome back,</p>
                     <div>
@@ -45,19 +29,19 @@
                                         href="/user/dashboard">Dashboard</a></li>
                                 <li class="px-3 py-1 text-xs text-left hover:rounded-b hover:bg-teal-700">
                                     <form action="/logout" method="post">
-                                            @csrf
-                                            <button type="submit"
-                                                class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Logout' ? 'text-white underline' : '' }}">
-                                                <i class="bi bi-box-arrow-left">
-                                                </i>Logout</button>
-                                        </form>
+                                        @csrf
+                                        <button type="submit"
+                                            class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Logout' ? 'text-white underline' : '' }}">
+                                            <i class="bi bi-box-arrow-left">
+                                            </i>Logout</button>
+                                    </form>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </li>
             @else
-                <li>
+                <li class="list-none">
                     <a href="/login"
                         class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Login' ? 'text-white underline' : '' }}">
                         <i class="bi bi-box-arrow-in-right">
