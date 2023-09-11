@@ -41,10 +41,10 @@
                     </div>
                 </li>
             @else
-                <li class="list-none">
+                <li class="list-none . {{ $title == 'Login' ? 'text-white' : '' }}">
                     <a href="/login"
-                        class="hover:text-gray-100 cursor-pointer focus:font-semibold . {{ $title == 'Login' ? 'text-white underline' : '' }}">
-                        <i class="bi bi-box-arrow-in-right">
+                        class="hover:text-gray-100 cursor-pointer focus:font-semibold">
+                        <i class="bi bi-box-arrow-in-right pr-1">
                         </i> Login</a>
                 </li>
             @endauth
